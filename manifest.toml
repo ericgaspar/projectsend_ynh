@@ -56,6 +56,7 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
+    in_subdir = false
     url = "https://github.com/projectsend/projectsend/releases/download/r1720/projectsend-r1720.zip"
     sha256 = "49c21ace9802a0cd849f3cc54a043c3dff6115c11ec70f892997b87769eeb8b2"
 
@@ -65,7 +66,7 @@ ram.runtime = "50M"
 
     [resources.install_dir]
     group = "www-data:r-x"
-    
+
     [resources.permissions]
     main.url = "/"
 
