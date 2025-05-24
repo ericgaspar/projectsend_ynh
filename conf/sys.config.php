@@ -32,13 +32,13 @@
 define('DB_DRIVER', 'mysql');
 
 /** Database name */
-define('DB_NAME', '__DN_NAME__');
+define('DB_NAME', '__DB_NAME__');
 
 /** Database host (in most cases it's localhost) */
 define('DB_HOST', 'localhost');
 
 /** Database username (must be assigned to the database) */
-define('DB_USER', '__DN_USER__');
+define('DB_USER', '__DB_USER__');
 
 /** Database password */
 define('DB_PASSWORD', '__DB_PWD__');
