@@ -70,7 +70,7 @@ define('TABLES_PREFIX', 'tbl_');
  * immediately.
  *
  */
-define('SITE_LANG','en');
+define('SITE_LANG','__LANGUAGE__');
 
 /**
  * Define a maximum size (in mb.) that is allowed on each file to be uploaded.

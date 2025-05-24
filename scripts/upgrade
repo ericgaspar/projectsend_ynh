@@ -12,8 +12,8 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Ensuring downward compatibility..."
 
-ynh_app_setting_set_default --key=php_upload_max_filesize --value=50M
-ynh_app_setting_set_default --key=php_post_max_size --value=50M
+ynh_app_setting_set_default --key=php_upload_max_filesize --value=128M
+ynh_app_setting_set_default --key=php_post_max_size --value=128M
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -21,17 +21,17 @@ ynh_app_setting_set_default --key=php_post_max_size --value=50M
 ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from manifest.toml
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env data"
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="includes/sys.config.php"
 
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
 ynh_script_progression "Updating $app's configuration files..."
 
-ynh_config_add --template="some_config_file" --destination="$install_dir/some_config_file"
+ynh_config_add --template="sys.config.php" --destination="$install_dir/includes/sys.config.php"
 
-chmod 400 "$install_dir/some_config_file"
-chown "$app:$app" "$install_dir/some_config_file"
+chmod 400 "$install_dir/includes/sys.config.php"
+chown "$app:$app" "$install_dir/includes/sys.config.php"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
